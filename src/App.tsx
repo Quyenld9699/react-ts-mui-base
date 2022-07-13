@@ -1,5 +1,5 @@
 import Header from './layout/Header';
-import { ThemeCustomProvider } from './theme/ThemeContext';
+import { ThemeCustomProvider } from './context/theme-context';
 
 function App() {
     return (

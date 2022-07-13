@@ -1,5 +1,5 @@
 import { Box, Button, Paper, Typography } from '@mui/material';
-import { useThemeContext } from '../theme/ThemeContext';
+import { useThemeContext } from '../context/theme-context';
 
 export default function Header() {
     const { toggleThemeMode } = useThemeContext();

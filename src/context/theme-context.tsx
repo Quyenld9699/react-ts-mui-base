@@ -1,7 +1,7 @@
 import { createTheme, CssBaseline, responsiveFontSizes, Theme, ThemeProvider, useMediaQuery } from '@mui/material';
 import { deepmerge } from '@mui/utils';
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
-import { getThemeConfig, getThemedComponent, THEME_MODE } from './theme';
+import { getThemeConfig, getThemedComponent, THEME_MODE } from '../theme/theme';
 
 type Props = {
     children: ReactNode;

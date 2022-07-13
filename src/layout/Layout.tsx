@@ -1,4 +1,4 @@
-import { ThemeCustomProvider } from '../theme/ThemeContext';
+import { ThemeCustomProvider } from '../context/theme-context';
 import Header from './Header';
 
 export default function Layout() {
