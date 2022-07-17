@@ -1,23 +1,18 @@
-import { createTheme, CssBaseline, responsiveFontSizes, Theme, ThemeProvider, useMediaQuery } from '@mui/material';
+import { CssBaseline, responsiveFontSizes, Theme, ThemeProvider, useMediaQuery } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 import { deepmerge } from '@mui/utils';
-import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { BaseContextProps } from '../global.config';
 import { getThemeConfig, getThemedComponent, THEME_MODE } from '../theme/theme';
-
-type Props = {
-    children: ReactNode;
-};
 
 export interface ThemeContextProps {
     toggleThemeMode: () => void;
     mode?: string;
 }
 
-const ThemeContext = createContext<ThemeContextProps>({
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    toggleThemeMode: () => {},
-});
+const ThemeContext = createContext<ThemeContextProps>({} as ThemeContextProps);
 
-export function ThemeCustomProvider({ children }: Props) {
+export function ThemeCustomProvider({ children }: BaseContextProps) {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const [mode, setMode] = useState<THEME_MODE>((): THEME_MODE => {
         let initialMode = localStorage.getItem('theme') as THEME_MODE;
