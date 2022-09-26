@@ -6,6 +6,7 @@ import { useThemeContext } from '../theme/ThemeContext';
 export default function Header() {
     const { toggleThemeMode } = useThemeContext();
     const { notifySuccess } = useNotifier();
+
     return (
         <>
             <Button variant="contained" onClick={() => toggleThemeMode()}>
