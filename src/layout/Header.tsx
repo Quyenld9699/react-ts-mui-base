@@ -1,4 +1,6 @@
 import { Box, Button, Paper, Typography } from '@mui/material';
+import axios from 'axios';
+import { useEffect } from 'react';
 import { imagePath } from 'src/constants/imagePath';
 import useNotifier from '../hooks/useNotifier';
 import { useThemeContext } from '../theme/ThemeContext';
@@ -6,7 +8,16 @@ import { useThemeContext } from '../theme/ThemeContext';
 export default function Header() {
     const { toggleThemeMode } = useThemeContext();
     const { notifySuccess } = useNotifier();
-
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await axios.get('/postes/');
+                console.log(response);
+            } catch (err) {
+                console.log(err);
+            }
+        })();
+    }, []);
     return (
         <>
             <Button variant="contained" onClick={() => toggleThemeMode()}>
